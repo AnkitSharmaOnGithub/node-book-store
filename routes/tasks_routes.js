@@ -2,13 +2,11 @@
 const express = require("express");
 const router = express.Router();
 
+const tasksController = require('../controllers/tasks_controller');
 
+router.get("/", tasksController.getBooks);
 
-router.get("/", 
-
-router.get("/add", (req, res, next) => {
-  res.send("On Add");
-});
+router.get("/add", tasksController.addBooks);
 
 router.get("/view", (req, res, next) => {
   res.send("On View");  
