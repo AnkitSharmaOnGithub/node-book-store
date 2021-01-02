@@ -1,8 +1,8 @@
-const mysql = require('mysql2');
+const mysql = require("mysql2");
 
 const db = mysql.createPool({
-    host : 'localhost',
-    database : 'tasks_db',
-    user : 'root',
-    password : 'bitnami'
-})
+  host: "localhost",
+  database: "tasks_db",
+  user: "root",
+  password: "bitnami",
+});
