@@ -28,13 +28,15 @@ block content
     .container.first_el
         .row
             .col-md-6.m-auto
-                form
+                form(action="/add",method="POST")
                     div.form-group
                         label(for='taskName') Task Name
-                        input#taskName.form-control(type='text' placeholder='Task Name')
+                        input#taskName.form-control(type='text',placeholder='Task Name',name='taskName')
                     div.form-group
                         label(for='taskDesc') Task Description
-                        input#taskDesc.form-control(type='text' placeholder='Task Description')
+                        input#taskDesc.form-control(type='text',placeholder='Task Description',name='taskDesc')
+                    div.form-group
+                        button.btn.btn-sm.btn-success Add Task
 
 
     a.back-to-top(href='#')
