@@ -5,17 +5,10 @@ const path = require("path");
 // Importing 3rd Party Modules
 const express = require("express");
 const bodyParser = require("body-parser");
-const db = require("./util/database");
-
-db.execute("SELECT * FROM tasks").then((data) => {
-  console.log(data);
-})
-.catch(err => {
-    console.log(err);
-});
 
 // Setting Project Initials
 const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
 app.set("view engine", "pug");
 app.set("views", "views");
 
