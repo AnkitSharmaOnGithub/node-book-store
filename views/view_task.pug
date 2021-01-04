@@ -37,9 +37,11 @@ block content
                             .icon
                                 i.ion-ios-analytics-outline(style='color: #ff689b;')
                             h4.title
-                                a(href='#') #{task.task_name}
+                                a(href='javascript:;') #{task.task_name}
                             p.description #{task.task_desc}
-
+                            div.task_action
+                                a(href="/delete/"+task.task_id) Delete Book
+                                a(href="/edit/"+task.task_id) Edit Book
 
 
     a.back-to-top(href='#')
