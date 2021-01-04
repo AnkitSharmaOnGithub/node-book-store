@@ -1,25 +1,26 @@
-const db = require("../util/database");
+const Sequelize = require('sequelize');
 
-module.exports = class Task {
-  constructor(taskName, taskDesc) {
-    this.taskName = taskName;
-    this.taskDesc = taskDesc;
-  }
+const sequelize = require('../util/database');
 
-  save() {
-    return db.execute(
-      "INSERT INTO tasks (task_name,task_desc) VALUES (?, ?)",
-      [this.taskName, this.taskName]
-    );
-  }
+const Tasks = sequelize.define('tasks', {
+        task_id : {
+            type : Sequelize.INTEGER,
+            autoIncrement : true,
+            allowNull : false,
+            primaryKey : true
+        },
+        task_name : {
+            type : Sequelize.STRING,
+            allowNull : false,
+        },
+        task_desc : {
+            type : Sequelize.STRING,
+            allowNull : false,
+        },
+        task_date : {
+            type : Sequelize.DATE,
+            defaultValue: Sequelize.NOW
+        },
+});
 
-  static deleteById(id) {}
-
-  static fetchAll() {
-    return db.execute("SELECT * FROM tasks");
-  }
-
-  static findById(id) {
-    return db.execute("SELECT * FROM tasks WHERE tasks.task_id = ?", [id]);
-  }
-};
+module.exports = Tasks;
