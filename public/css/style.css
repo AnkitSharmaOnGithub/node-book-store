@@ -842,8 +842,18 @@ h6 {
   background: #3395ff;
 }
 
-#portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-preview:hover i,
-#portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-details:hover i {
+#portfolio
+  .portfolio-item
+  .portfolio-wrap
+  .portfolio-info
+  .link-preview:hover
+  i,
+#portfolio
+  .portfolio-item
+  .portfolio-wrap
+  .portfolio-info
+  .link-details:hover
+  i {
   color: #fff;
 }
 
@@ -1406,6 +1416,15 @@ h6 {
 }
 
 /* Custom Css */
-.first_el{
+.first_el {
   margin-top: 10rem;
+}
+
+.task_action {
+  display: flex;
+}
+
+.task_action a {
+  display: inline-block;
+  margin: 10px 40px;
 }
