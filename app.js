@@ -12,10 +12,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.set("view engine", "pug");
 app.set("views", "views");
 
+const sequelize = require('./util/database');
+
 // Setting Routes and static files Path
 const routes = require("./routes/tasks_routes");
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(routes);
 
-const server = http.createServer(app);
-server.listen(8000);
+// const server = http.createServer(app);
+
+sequelize.sync().then(result => {
+    // console.log(result);
+    app.listen(8000);
+}).catch(err => {
+    console.log(err);
+})
